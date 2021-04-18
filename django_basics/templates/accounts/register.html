@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+
+    <title>{% block title %} REGISTER {% endblock %}</title>
+    
+</head>
+<body>
+    {% comment %} POST call {% endcomment %}
+    {% block content %}
+    <div class="form-group">
+        <h2>Register</h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+        <p>Already a User? <a href="{% url 'login'%}">Click here</a></p>
+    </div>
+    {% endblock %}
+
+
+
+
+</body>
+</html>
